@@ -51,7 +51,7 @@ defmodule Assent.Strategy.Facebook do
         "middle_name" => user["middle_name"],
         "family_name" => user["last_name"],
         "profile"     => user["link"],
-        "picture"     => picture_url(site, user),
+        "picture"     => user["picture"],
         "email"       => user["email"]
       }}
     end
