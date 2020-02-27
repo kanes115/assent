@@ -217,6 +217,10 @@ defmodule Assent.Strategy.OAuth2 do
     end
   end
 
+  defp get_access_token(config, %{"accessToken" => token}) do
+    {:ok, %{"access_token" => token}}
+  end
+
   defp get_access_token(config, %{"code" => code}) do
     auth_method  = Config.get(config, :auth_method, nil)
     token_url    = Config.get(config, :token_url, "/oauth/token")
